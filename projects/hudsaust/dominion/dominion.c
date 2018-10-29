@@ -5,6 +5,7 @@
 #include <math.h>
 #include <stdlib.h>
 
+
 int compare(const void* a, const void* b) {
   if (*(int*)a > *(int*)b)
     return 1;
@@ -676,7 +677,6 @@ int smithyCardEffect(int currentPlayer, struct gameState *state, int handPos) {
          discardCard(handPos, currentPlayer, state, 0);
          return 0;
 }
-
 int council_roomEffect (int currentPlayer, struct gameState *state, int handPos){
     //+4 Cards
         for (int i = 0; i < 4; i++)
@@ -703,7 +703,7 @@ int council_roomEffect (int currentPlayer, struct gameState *state, int handPos)
 }
 
 int villageEffect(int currentPlayer, struct gameState *state, int handPos){
-    //+1 Card
+        //+1 Card
          drawCard(currentPlayer, state);
 
          //+2 Actions
