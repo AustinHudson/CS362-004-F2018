@@ -52,6 +52,25 @@ funcTests: unittest1.c dominion.o rngs.o
 	./unittest4 >> unittestresults.out
 	gcov -b dominion.c >> unittestresults.out
 
+randomCardTests: randomtestcard1.c randomtestcard2.c randomtestadventurer.c dominion.o rngs.o
+	echo "Results for Dominion card Random Tests" > randomtestresults.out
+
+	echo "randomtestcard1.c" >> randomtestresults.out
+	gcc -o randomtestcard1 -g randomtestcard1.c dominion.o rngs.o $(CFLAGS)
+	./randomtestcard1 >> randomtestresults.out
+	gcov -b -f dominion.c|grep "greatHallEffect" -B 0 -A 4 >> randomtestresults.out
+
+	echo "randomtestcard2.c" >> randomtestresults.out
+	gcc -o randomtestcard2 -g randomtestcard2.c dominion.o rngs.o $(CFLAGS)
+	./randomtestcard2 >> randomtestresults.out
+	gcov -b -f dominion.c|grep "villageEffect" -B 0 -A 4 >> randomtestresults.out
+	
+
+	echo "randomtestadventurer.c" >> randomtestresults.out
+	gcc -o randomtestadventurer -g randomtestadventurer.c dominion.o rngs.o $(CFLAGS)
+	./randomtestadventurer >> randomtestresults.out
+	gcov -b -f dominion.c|grep "adventureCardEffect" -B 0 -A 5 >> randomtestresults.out
+
 cardTests: cardtest1.c dominion.o rngs.o
 	echo "Results for Dominion Card Unit Tests:" >> unittestresults.out
 
@@ -79,7 +98,11 @@ cardTests: cardtest1.c dominion.o rngs.o
 player: player.c interface.o
 	gcc -o player player.c -g  dominion.o rngs.o interface.o $(CFLAGS)
 
-all: playdom player funcTests cardTests
+all: playdom player funcTests cardTests randomCardTests
+
+unittest: playdom player funcTests cardTests
+
+randomtest: playdom player randomCardTests 
 
 clean:
 	rm -f *.o playdom.exe playdom player player.exe  *.gcov *.gcda *.gcno *.so *.out testDrawCard testDrawCard.exe

@@ -646,7 +646,7 @@ int getCost(int cardNumber)
 
 int adventureCardEffect(int drawntreasure, struct gameState *state, int currentPlayer, int cardDrawn, int temphand[], int z) {
   while(drawntreasure<2){
-  	if (state->deckCount[currentPlayer] > 1) {//if the deck is empty we need to shuffle discard and add to deck
+  	if (state->deckCount[currentPlayer] < 1) {//if the deck is empty we need to shuffle discard and add to deck
         shuffle(currentPlayer, state);
     }
   	drawCard(currentPlayer, state);
@@ -710,6 +710,18 @@ int villageEffect(int currentPlayer, struct gameState *state, int handPos){
          state->numActions = state->numActions + 2;
 
          //discard played card from hand
+         discardCard(handPos, currentPlayer, state, 0);
+         return 0;
+}
+
+int greatHallEffect(int currentPlayer, struct gameState *state, int handPos){
+         //+1 Card
+         drawCard(currentPlayer, state);
+
+         //+1 Actions
+         state->numActions++;
+
+         //discard card from hand
          discardCard(handPos, currentPlayer, state, 0);
          return 0;
 }
@@ -889,7 +901,8 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
         return smithyCardEffect(currentPlayer, state, handPos);
 		
     case village:
-        villageEffect(currentPlayer, state, handPos);
+        return villageEffect(currentPlayer, state, handPos);
+
 		
     case baron:
       state->numBuys++;//Increase buys by 1!
@@ -943,15 +956,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
       return 0;
 		
     case great_hall:
-      //+1 Card
-      drawCard(currentPlayer, state);
-			
-      //+1 Actions
-      state->numActions++;
-			
-      //discard card from hand
-      discardCard(handPos, currentPlayer, state, 0);
-      return 0;
+        return greatHallEffect (currentPlayer, state, handPos);
 		
     case minion:
       //+1 action

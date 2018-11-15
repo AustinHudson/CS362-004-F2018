@@ -130,4 +130,7 @@ int getWinners(int players[MAX_PLAYERS], struct gameState *state);
 
 
 int adventureCardEffect(int drawntreasure, struct gameState *state, int currentPlayer, int cardDrawm, int temphand[], int z);
+int greatHallEffect(int currentPlayer, struct gameState *state, int handPos);
+int villageEffect(int currentPlayer, struct gameState *state, int handPos);
+
 #endif
