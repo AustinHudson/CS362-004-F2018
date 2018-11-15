@@ -53,23 +53,22 @@ funcTests: unittest1.c dominion.o rngs.o
 	gcov -b dominion.c >> unittestresults.out
 
 randomCardTests: randomtestcard1.c randomtestcard2.c randomtestadventurer.c dominion.o rngs.o
-	echo "Results for Dominion card Random Tests" > randomtestresults.out
-
-	echo "randomtestcard1.c" >> randomtestresults.out
+	
+	echo "randomtestcard1.c" >> randomtestcard1.out
 	gcc -o randomtestcard1 -g randomtestcard1.c dominion.o rngs.o $(CFLAGS)
-	./randomtestcard1 >> randomtestresults.out
-	gcov -b -f dominion.c|grep "greatHallEffect" -B 0 -A 4 >> randomtestresults.out
+	./randomtestcard1 >> randomtestcard1.out
+	gcov -b -f dominion.c|grep "greatHallEffect" -B 0 -A 4 >> randomtestcard1.out
 
-	echo "randomtestcard2.c" >> randomtestresults.out
+	echo "randomtestcard2.c" >> randomtestcard2.out
 	gcc -o randomtestcard2 -g randomtestcard2.c dominion.o rngs.o $(CFLAGS)
-	./randomtestcard2 >> randomtestresults.out
-	gcov -b -f dominion.c|grep "villageEffect" -B 0 -A 4 >> randomtestresults.out
+	./randomtestcard2 >> randomtestcard2.out
+	gcov -b -f dominion.c|grep "villageEffect" -B 0 -A 4 >> randomtestcard2.out
 	
 
-	echo "randomtestadventurer.c" >> randomtestresults.out
+	echo "randomtestadventurer.c" >> randomtestadventurer.out
 	gcc -o randomtestadventurer -g randomtestadventurer.c dominion.o rngs.o $(CFLAGS)
-	./randomtestadventurer >> randomtestresults.out
-	gcov -b -f dominion.c|grep "adventureCardEffect" -B 0 -A 5 >> randomtestresults.out
+	./randomtestadventurer >> randomtestadventurer.out
+	gcov -b -f dominion.c|grep "adventureCardEffect" -B 0 -A 5 >> randomtestadventurer.out
 
 cardTests: cardtest1.c dominion.o rngs.o
 	echo "Results for Dominion Card Unit Tests:" >> unittestresults.out
