@@ -1,0 +1,386 @@
+Results for Dominion Function Unit Tests:
+unittest1.c:
+-------------------------------------------
+
+Testing kingdomCards():
+
+-------------------------------------------
+Testing with the following arguments: 
+14, 11, 19, 24, 3, 16, 7, 1, 12, 19, 
+
+Expected Values of Kingdom cards array: 
+[14, 11, 19, 24, 3, 16, 7, 1, 12, 19, ]
+Actual Values after running kingdomCards(): 
+[14, 11, 19, 24, 3, 16, 7, 1, 12, 19, ]
+PASSED
+-------------------------------------------
+Testing with the following arguments: 
+12, 8, 2, 23, 22, 5, 5, 19, 17, 3, 
+
+Expected Values of Kingdom cards array: 
+[12, 8, 2, 23, 22, 5, 5, 19, 17, 3, ]
+Actual Values after running kingdomCards(): 
+[12, 8, 2, 23, 22, 5, 5, 19, 17, 3, ]
+PASSED
+-------------------------------------------
+Testing with the following arguments: 
+19, 7, 10, 19, 1, 6, 15, 25, 2, 18, 
+
+Expected Values of Kingdom cards array: 
+[19, 7, 10, 19, 1, 6, 15, 25, 2, 18, ]
+Actual Values after running kingdomCards(): 
+[19, 7, 10, 19, 1, 6, 15, 25, 2, 18, ]
+PASSED
+-------------------------------------------
+Testing with the following arguments: 
+7, 12, 14, 14, 6, 22, 9, 9, 22, 18, 
+
+Expected Values of Kingdom cards array: 
+[7, 12, 14, 14, 6, 22, 9, 9, 22, 18, ]
+Actual Values after running kingdomCards(): 
+[7, 12, 14, 14, 6, 22, 9, 9, 22, 18, ]
+PASSED
+-------------------------------------------
+Testing with the following arguments: 
+7, 26, 5, 5, 26, 23, 9, 12, 7, 22, 
+
+Expected Values of Kingdom cards array: 
+[7, 26, 5, 5, 26, 23, 9, 12, 7, 22, ]
+Actual Values after running kingdomCards(): 
+[7, 26, 5, 5, 26, 23, 9, 12, 7, 22, ]
+PASSED
+-------------------------------------------
+All tests passed!
+-------------------------------------------
+
+File 'dominion.c'
+Lines executed:1.86% of 645
+Branches executed:0.00% of 417
+Taken at least once:0.00% of 417
+No calls
+dominion.c:creating 'dominion.c.gcov'
+
+unittest2.c:
+-------------------------------------------
+
+Testing scoreFor():
+
+-------------------------------------------
+
+Testing to see if hand score being calculated correctly (Empty deck/discard)
+
+Expected score value: 10
+Actual Score: 10
+
+
+PASSED
+
+-------------------------------------------
+
+Testing to see if deck score being calculated correctly (Empty hand/discard)
+
+Expected score value: 10
+Actual Score: 0
+
+
+FAILED
+
+-------------------------------------------
+
+Testing to see if discard score being calculated correctly (Empty deck/hand)
+
+Expected score value: 10
+Actual Score: 12
+
+
+FAILED
+
+-------------------------------------------
+2 tests failed
+-------------------------------------------
+
+File 'dominion.c'
+Lines executed:23.88% of 645
+Branches executed:28.30% of 417
+Taken at least once:23.98% of 417
+No calls
+dominion.c:creating 'dominion.c.gcov'
+
+unittest3.c:
+-------------------------------------------
+
+Testing fullDeckCount():
+
+-------------------------------------------
+
+Testing to see if cards in hand being counted correctly (Empty deck/discard)
+
+Expected count values:
+curse: 2, duchy: 1, province: 3, estate: 0
+Actual count values:
+curse: 2, duchy: 1, province: 3, estate: 0
+
+
+PASSED
+
+-------------------------------------------
+
+Testing to see if cards in deck being counted correctly (Empty hand/discard)
+
+Expected count values:
+curse: 2, duchy: 1, province: 3, estate: 0
+Actual count values:
+curse: 2, duchy: 1, province: 3, estate: 0
+
+
+PASSED
+
+-------------------------------------------
+
+Testing to see if cards in discard being counted correctly (Empty deck/hand)
+
+Expected count values:
+curse: 2, duchy: 1, province: 3, estate: 0
+Actual count values:
+curse: 2, duchy: 1, province: 3, estate: 0
+
+
+PASSED
+
+-------------------------------------------
+All tests passed!
+-------------------------------------------
+
+File 'dominion.c'
+Lines executed:24.19% of 645
+Branches executed:28.78% of 417
+Taken at least once:24.70% of 417
+No calls
+dominion.c:creating 'dominion.c.gcov'
+
+unittest4.c:
+-------------------------------------------
+
+Testing numHandCards():
+
+-------------------------------------------
+
+Expected Hand Count: 41
+Actual Hand CountL 41
+
+PASSED
+-------------------------------------------
+
+Expected Hand Count: 9
+Actual Hand CountL 9
+
+PASSED
+-------------------------------------------
+
+Expected Hand Count: 22
+Actual Hand CountL 22
+
+PASSED
+-------------------------------------------
+
+Expected Hand Count: 23
+Actual Hand CountL 23
+
+PASSED
+-------------------------------------------
+
+Expected Hand Count: 0
+Actual Hand CountL 0
+
+PASSED
+-------------------------------------------
+
+Expected Hand Count: 22
+Actual Hand CountL 22
+
+PASSED
+-------------------------------------------
+
+Expected Hand Count: 47
+Actual Hand CountL 47
+
+PASSED
+-------------------------------------------
+
+Expected Hand Count: 7
+Actual Hand CountL 7
+
+PASSED
+-------------------------------------------
+
+Expected Hand Count: 26
+Actual Hand CountL 26
+
+PASSED
+-------------------------------------------
+
+Expected Hand Count: 41
+Actual Hand CountL 41
+
+PASSED
+-------------------------------------------
+
+-------------------------------------------
+All tests passed!
+-------------------------------------------
+
+File 'dominion.c'
+Lines executed:24.65% of 645
+Branches executed:28.78% of 417
+Taken at least once:24.94% of 417
+No calls
+dominion.c:creating 'dominion.c.gcov'
+
+Results for Dominion Card Unit Tests:
+cardtest1.c:
+----------------- Testing Card: smithy ----------------
+TEST 1: Player has 5 cards in hand before smithy is played
+hand count = 5, expected = 5
+PASSED
+-------------------------------------------
+TEST 2: Player is drawing 3 cards when playing smithy
+Hand count before playing smithy:
+hand count = 5
+
+Hand count after playing smithy:
+hand count = 6, expected = 7
+FAILED
+-------------------------------------------
+TEST 3: Player has 5 cards in deck before playing card
+deck count before playing smithy:
+deck count = 5, expected = 5
+PASSED
+-------------------------------------------
+TEST4: Player is drawing cards from own deck
+deck count before playing smithy:
+deck count = 5
+deck count after playing smithy:
+deck count = 3, expected: < 5
+PASSED
+-------------------------------------------
+
+-------------------------------------------
+1 tests failed
+-------------------------------------------
+
+File 'dominion.c'
+Lines executed:28.22% of 645
+Branches executed:36.21% of 417
+Taken at least once:26.62% of 417
+No calls
+dominion.c:creating 'dominion.c.gcov'
+
+cardtest2.c:
+----------------- Testing Card: adventurer ----------------
+TEST 1: Player has 5 cards in hand before adventurer is played
+hand count = 5, expected = 5
+PASSED
+-------------------------------------------
+TEST 2: The player has 2 additional cards in their deck after adventurer played
+hand count before adventurer = 5
+hand count after adventurer = 7, expected = 6
+FAILED
+-------------------------------------------
+TEST 3: The adventurer card is being discarded after being played
+number of adventurers in hand before play = 1, expected = 1
+number of adventurers in hand after play = 1, expected = 0
+FAILED
+-------------------------------------------
+TEST 4: The new cards in the players hand are treasure cards
+number of treasure cards in hand before play = 3, expected = 3
+number of treasure cards in hand after play = 5, expected = 5
+PASSED
+-------------------------------------------
+-------------------------------------------
+2 tests failed
+-------------------------------------------
+
+File 'dominion.c'
+Lines executed:30.23% of 645
+Branches executed:38.13% of 417
+Taken at least once:28.30% of 417
+No calls
+dominion.c:creating 'dominion.c.gcov'
+
+cardtest3.c:
+----------------- Testing Card: village ----------------
+TEST 1: Player has 5 cards in hand before village is played
+hand count = 5, expected = 5
+PASSED
+-------------------------------------------
+TEST 2: Player has 1 action before adventurer is played
+action count = 1, expected = 1
+PASSED
+-------------------------------------------
+TEST 3: Player draws a new card after playing/discarding the village card
+hand count before playing the village card:
+hand count = 5, expected = 5
+hand count after playing the village card:
+hand count = 5, expected = 5
+PASSED
+-------------------------------------------
+TEST 4: Player gains 2 actions after playing village card
+action count before playing the village card:
+action count = 1, expected = 1
+action count after playing the village card:
+action count = 3, expected = 2
+PASSED
+-------------------------------------------
+-------------------------------------------
+All tests passed!
+-------------------------------------------
+
+File 'dominion.c'
+Lines executed:31.01% of 645
+Branches executed:38.13% of 417
+Taken at least once:28.54% of 417
+No calls
+dominion.c:creating 'dominion.c.gcov'
+
+cardtest4.c:
+----------------- Testing Card: Great Hall ----------------
+TEST 1: Player has 5 cards in hand before Great Hall is played
+hand count = 5, expected = 5
+PASSED
+-------------------------------------------
+TEST 2: Player has 1 action before Great Hall is played
+action count = 1, expected = 1
+PASSED
+-------------------------------------------
+TEST 3: Player draws a new card after playing/discarding the Great Hall card
+hand count before playing the village card:
+hand count = 5, expected = 5
+hand count after playing the village card:
+hand count = 5, expected = 5
+PASSED
+-------------------------------------------
+TEST 4: Player gains 1 action after playing village card
+action count before playing the village card:
+action count = 1, expected = 1
+action count after playing the village card:
+action count = 2, expected = 2
+PASSED
+-------------------------------------------
+TEST 5: Player gains 1 victory point from Great Hall card
+victory point count from hand without Great Hall card:
+victory point count = 0, expected = 0
+victory point count from hand with Great Hall card:
+victory point count = 1, expected = 1
+PASSED
+-------------------------------------------
+-------------------------------------------
+All tests passed!
+-------------------------------------------
+
+File 'dominion.c'
+Lines executed:31.63% of 645
+Branches executed:38.13% of 417
+Taken at least once:28.78% of 417
+No calls
+dominion.c:creating 'dominion.c.gcov'
+

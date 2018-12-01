@@ -1,0 +1,16 @@
+randomtestadventurer.c
+deckcount: 114, discardcount: 189, handcount: 346
+pre: 189,  post: 303
+pre deck: 114,  post deck: 0
+Not Enough Treasure cards to accurately test functionality.
+
+ Total Test Passed: 0
+
+ Total Test Failed: 0
+
+Function 'adventurerCard'
+Lines executed:100.00% of 17
+Branches executed:100.00% of 12
+Taken at least once:83.33% of 12
+No calls
+
